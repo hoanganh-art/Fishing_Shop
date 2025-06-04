@@ -11,7 +11,7 @@
             <ul>
                 <li><a href="../../customer/trang_chu.php">Trang chủ</a></li>
                 <li><a href="../../customer/san_pham.php">Sản phẩm</a></li>
-                <li><a href="#">Danh mục</a></li>
+                <li><a href="../../customer/danh_muc.php">Danh mục</a></li>
                 <li><a href="#">Khuyến mãi</a></li>
                 <li><a href="#">Hướng dẫn</a></li>
                 <li><a href="#">Liên hệ</a></li>
