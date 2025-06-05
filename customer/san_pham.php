@@ -18,8 +18,8 @@
         <!-- Breadcrumb -->
         <div class="breadcrumb">
             <ul>
-                <li><a href="index.html">Trang chủ</a></li>
-                <li><a href="products.html">Sản phẩm</a></li>
+                <li><a href="trang_chu.php">Trang chủ</a></li>
+                <li><a href="san_pham.php">Sản phẩm</a></li>
                 <li><span>Cần câu</span></li>
             </ul>
         </div>
