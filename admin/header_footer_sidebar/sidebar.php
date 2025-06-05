@@ -1,5 +1,3 @@
-
-
 <aside class="admin-sidebar">
     <ul class="sidebar-menu">
         <li class="menu-header" id="bashboard">
@@ -47,27 +45,27 @@
             <span>Quản trị viên</span>
         </li>
 
-        <li class="menu-header">
+        <li class="menu-header" id="bao_cao">
             <i class="fas fa-chart-line"></i>
             <span>Báo cáo</span>
         </li>
 
-        <li class="menu-item">
+        <li class="menu-item" id="don_hang">
             <i class="fas fa-shopping-cart"></i>
             <span>Đơn hàng</span>
         </li>
 
-        <li class="menu-item">
+        <li class="menu-item" id="thong_ke">
             <i class="fas fa-chart-pie"></i>
             <span>Thống kê</span>
         </li>
 
-        <li class="menu-header">
+        <li class="menu-header" id="cai_dat">
             <i class="fas fa-cog"></i>
             <span>Cài đặt</span>
         </li>
 
-        <li class="menu-item">
+        <li class="menu-item" id="he_thong">
             <i class="fas fa-sliders-h"></i>
             <span>Hệ thống</span>
         </li>
@@ -96,10 +94,10 @@
     });
 
     //Quản lý sản phẩm
-    document.getElementById('product').addEventListener('click',function(){
+    document.getElementById('product').addEventListener('click', function() {
         document.getElementById('quan_ly_product').style.display = 'list-item';
     });
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('quan_ly_product').style.display = 'none';
     });
     //Đóng trang quản lý khi click ra ngoài
@@ -115,11 +113,37 @@
         }
     });
     //Người dùng
-    document.getElementById('user').addEventListener('click',function(){
+    document.getElementById('bao_cao').addEventListener('click', function() {
+        document.getElementById('don_hang').style.display = 'list-item';
+        document.getElementById('thong_ke').style.display = 'list-item';
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('don_hang').style.display = 'none';
+        document.getElementById('thong_ke').style.display = 'none';
+    });
+
+    document.addEventListener('click', function(event) {
+        const bao_cao = document.getElementById('bao_cao');
+        const don_hang = document.getElementById('don_hang');
+        const thong_ke = document.getElementById('thong_ke');
+        // Kiểm tra nếu customer hoặc admin đang hiển thị thì mới đóng
+        if (
+            (don_hang.style.display === 'list-item' || thong_ke.style.display === 'list-item') &&
+            !bao_cao.contains(event.target) &&
+            !don_hang.contains(event.target) &&
+            !thong_ke.contains(event.target)
+        ) {
+            don_hang.style.display = 'none';
+            thong_ke.style.display = 'none';
+        }
+    });
+
+    //Báo Cáo
+    document.getElementById('user').addEventListener('click', function() {
         document.getElementById('customer').style.display = 'list-item';
         document.getElementById('admin').style.display = 'list-item';
     });
-    document.addEventListener('DOMContentLoaded', function(){
+    document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('customer').style.display = 'none';
         document.getElementById('admin').style.display = 'none';
     });
@@ -132,11 +156,32 @@
         if (
             (customer.style.display === 'list-item' || admin.style.display === 'list-item') &&
             !user.contains(event.target) &&
-            !customer.contains(event.target) && 
+            !customer.contains(event.target) &&
             !admin.contains(event.target)
         ) {
             customer.style.display = 'none';
             admin.style.display = 'none';
+        }
+    });
+
+    //Cài đặt -> hệ thống
+    document.getElementById('cai_dat').addEventListener('click', function() {
+        document.getElementById('he_thong').style.display = 'list-item';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('he_thong').style.display = 'none';
+    });
+    // Đóng "Tổng quan" khi click ra ngoài
+    document.addEventListener('click', function(event) {
+        const cai_dat = document.getElementById('cai_dat');
+        const he_thong = document.getElementById('he_thong');
+        if (
+            he_thong.style.display === 'list-item' &&
+            !cai_dat.contains(event.target) &&
+            !he_thong.contains(event.target)
+        ) {
+            he_thong.style.display = 'none';
         }
     });
 </script>
