@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../../eseter/css/admin/header_footer_sidebar.css">
 <aside class="admin-sidebar">
     <ul class="sidebar-menu">
         <li class="menu-header" id="bashboard">
