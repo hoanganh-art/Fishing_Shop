@@ -24,6 +24,7 @@
             display: flex;
             min-height: calc(100vh - 70px);
         }
+
         /* Main Content */
         .main-content {
             flex: 1;
@@ -233,10 +234,10 @@
 
 <body>
     <!-- header -->
-     <?php include_once('../admin/header_footer_sidebar/header.php'); ?>
+    <?php include_once('../admin/header_footer_sidebar/header.php'); ?>
     <div class="container">
         <!-- sidebar -->
-         <?php include_once ('../admin/header_footer_sidebar/sidebar.php');?>
+        <?php include_once('../admin/header_footer_sidebar/sidebar.php'); ?>
         <main class="main-content">
             <div class="page-header">
                 <h1 class="page-title"><i class="fas fa-list"></i> Quản lý Danh mục</h1>
@@ -398,7 +399,7 @@
         </div>
     </div>
     <!-- footer -->
-     <?php include_once('../admin/header_footer_sidebar/footer.php'); ?>
+    <?php include_once('../admin/header_footer_sidebar/footer.php'); ?>
     <script>
         // Xử lý mở/đóng modal
         const modal = document.getElementById('categoryModal');
